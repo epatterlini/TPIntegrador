@@ -38,43 +38,43 @@
         <div class="container w-50 pt-2">
             <!-- Texto superior del formulario -->
             <div class="text-center">
-                <p class="m-0"><sup>VENTA</sup>
-                <h2 id="precioTotal">VALOR TOTAL $</h2>
+                <p class="m-0"><sup>PEDIDO</sup>
+                <h2 id="precioTotal"></h2>
                 </p>
             </div>
             <!-- Formulario -->
             <form class="row g-1 gx-2 formulario" id="formulario">
                 <div class="col-md-6 mb-3">
-                    <input type="text" class="form-control" placeholder="Nombre">
+                    <input name="nombre" type="text" class="form-control" placeholder="Nombre">
                 </div>
                 <div class="col-md-6 mb-3">
-                    <input type="text" class="form-control" placeholder="Apellido">
+                    <input name="apellido" type="text" class="form-control" placeholder="Apellido">
                 </div>
                 <div class="mb-3">
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Domicilio">
+                    <input name="domicilio" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Domicilio">
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="cantidad" class="form-label">¿Sos cliente?</label>
-                    <select id="categoria" class="form-select">
+                    <select name="esCliente" id="esCliente" class="form-select" onchange="cliente()">
                         <option value="">No</option>
-                        <option value="estudiante">Si</option>
+                        <option value="cliente">Si</option>
                     </select>
                 </div>
                 <div class="col-md-6 mb-3">
-                    <label for="cantidad" class="form-label">Núm. Cliente</label>
+                    <label for="numCliente" class="form-label">Núm. Cliente</label>
                     <input type="text" class="form-control" id="numCliente" placeholder="Núm. Cliente">
                 </div>
                 <div class="mb-3">
-                    <p class="alert alert-primary" id="totalAPagar">Total a Pagar siendo cliente: $</p>
+                    <p class="alert alert-primary" id="valorDescuento">Total a Pagar siendo cliente: $</p>
                 </div>
 
                 <div class="d-grid gap-2 col-6 mx-auto">
                     <button class="btn text-white fs-6 btnBorrar" style="background-color: #96c93e;"
-                        type=" button" id="borrar" onclick="window.close()">Cancelar</button>
+                        type=" button" id="borrar" onclick="onClose()">Cancelar</button>
                 </div>
                 <div class="d-grid gap-2 col-6 mx-auto">
                     <button class="btn text-white fs-6 btnResumen" style="background-color: #96c93e;"
-                        type=" button" id="resumen" onclick="load()">Resumen</button>
+                        type="button" id="resumen" onclick="compra()">Resumen</button>
                 </div>
             </form>
         </div>
