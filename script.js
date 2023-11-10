@@ -1,6 +1,6 @@
 var valor;
 var suma = 0;
-var precios = 0;
+let precios = 0;
 const valorCliente = 0.30;
 
 function eje1()
@@ -17,8 +17,8 @@ function Pedido()
 
 function load()
 {
-    let elPrecio = precios;
-    document.getElementById("precioTotal").textContent = "VALOR TOTAL $"+ elPrecio;
+    window.alert(document.cookie);
+    document.getElementById("precioTotal").value = "VALOR TOTAL $"+ document.cookie;;
 }
 
 function seleccion()
@@ -28,12 +28,14 @@ function seleccion()
         precios =  suma + parseInt(document.getElementById("precio").innerHTML);
         suma = precios;
         window.alert("El precio es "+precios);
+        document.cookie = encodeURIComponent(precios); 
     }else
     {
         precios =  parseInt(document.getElementById("precio").innerHTML);
         suma = precios;
         elPrecio = precios;
         window.alert("El precio es "+precios);
+        document.cookie = encodeURIComponent(precios);
     }
 }
 
